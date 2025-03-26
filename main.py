@@ -24,13 +24,13 @@ def action(action):
     score = GOAL - abs(GOAL - (CARDS[card1] + CARDS[card2]))
 
     if card1 == card2:
-        reward = -20
+        reward = -50
         score = 0
 
     elif CARDS[card1] + CARDS[card2] == GOAL:
-        reward = 10
+        reward = 50
 
     else:
-        reward = -abs(GOAL - (CARDS[card1] + CARDS[card2]))
+        reward = -abs(GOAL - (CARDS[card1] + CARDS[card2])) + 10
 
     return reward, score, done
