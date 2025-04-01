@@ -31,6 +31,6 @@ def action(action):
         reward = 50
 
     else:
-        reward = -abs(GOAL - (CARDS[card1] + CARDS[card2])) + 10
+        reward = -abs(GOAL - (CARDS[card1] + CARDS[card2]) + 10)
 
     return reward, score, done
