@@ -23,7 +23,7 @@ class QTrainer:
         self.optimizer = optim.Adam(self.model.parameters(), lr=self.lr)
         self.criterion = nn.MSELoss()
 
-        print(self.device)
+        # print(self.device)
 
     def train_step(self, state, action, reward, done):
         state = torch.tensor(state, dtype=torch.float).to(self.device)

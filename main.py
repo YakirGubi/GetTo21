@@ -18,7 +18,7 @@ def action(action):
     card1 = torch.argmax(temp_action[:10]).item()
     card2 = torch.argmax(temp_action[10:]).item()
 
-    print('Number:', CARDS[card1] + CARDS[card2])
+    # print('Number:', CARDS[card1] + CARDS[card2])
 
     done = True
     score = GOAL - abs(GOAL - (CARDS[card1] + CARDS[card2]))
@@ -31,6 +31,6 @@ def action(action):
         reward = 50
 
     else:
-        reward = -abs(GOAL - (CARDS[card1] + CARDS[card2]) + 10)
+        reward = -abs(GOAL - (CARDS[card1] + CARDS[card2])) - 10
 
     return reward, score, done
